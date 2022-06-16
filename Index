@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boeing Vending</title>
+    <link rel="icon" href="https://i0.wp.com/logotaglines.com/wp-content/uploads/2019/10/Boeing-Logo-Taglne-Slogan.jpg?fit=397%2C397&ssl=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, textarea, label { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 40px;
+      color: #fff;
+      z-index: 2;
+      line-height: 83px;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #cc7a00; 
+      }
+      .banner {
+      position: relative;
+      height: 300px;
+      background-image: url("https://helios-i.mashable.com/imagery/articles/04ctmwseCuRaTIFLLsjKem6/hero-image.fill.size_1248x702.v1635445808.jpg");  
+      background-size:cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.2); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color: #cc7a00;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0 #cc7a00;
+      color: #cc7a00;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #cc7a00;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .question-answer label {
+      display: block;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid #cc7a00;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #cc7a00;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #cc7a00;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #ff9800;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="/">
+        <div class="banner">
+          <h1>Boeing Vending Audit</h1>
+        </div>
+        <br>
+        <div class="item">
+          <label for="name">Name<span>*</span></label>
+          <input id="name" type="text" name="name" required/>
+        </div>
+        <div class="item">
+          <label for="email">BEMSID<span>*</span></label>
+          <input id="email" type="number" name="email" required/>
+        </div>
+        <div class="item">
+          <label for="email">Vending Location<span>*</span></label>
+          <input id="email" type="number" name="email" required/>
+        </div>
+        <div class="item">
+          <label for="bdate">Date<span>*</span></label>
+          <input id="bdate" type="date" name="bdate" required/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="item">
+          <label for="exp">Are any products past the expiration date?</label>
+          <select id="exp">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="item">
+          <label for="permit">Is the vending permit visible and accurate?</label>
+          <select id="permit">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="item">
+          <label for="city">How would you rate the cleanliness of the surrounding area, including the microwave (1-10)
+            <span>*</span></label>
+          <input type="range" list="tickmarks">
+
+          <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+            <option value="40"></option>
+            <option value="50" label="5"></option>
+            <option value="60"></option>
+            <option value="70"></option>
+            <option value="80"></option>
+            <option value="90"></option>
+            <option value="100" label="10"></option>
+          </datalist>
+        </div>
+        <div class="question">
+          <fieldset width="0px">
+          <label>Which utensils are out of stock?</label>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="forks" id="radio_1" name="ut"/>
+              <label for="radio_1" class="radio"><span>Forks</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="spoons" id="radio_2" name="ut"/>
+              <label for="radio_2" class="radio"><span>Spoons</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="knifes" id="radio_3" name="ut"/>
+              <label for="radio_3" class="radio"><span>Knifes</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="none" id="radio_4" name="ut"/>
+              <label for="radio_4" class="radio"><span>None</span></label>
+            </div>
+          </div>
+        </fieldset>
+        </div>
+        <div class="item">
+          <label for="permit">Are the green well being stickers visible on the appropriate items?
+          </label>
+          <select id="permit">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="item">
+          <label for="city">How well would you estimate the vending machine is stocked? (0-100%)
+           </label>
+          <input type="range" list="tickmarks">
+
+          <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+            <option value="40"></option>
+            <option value="50" label="5"></option>
+            <option value="60"></option>
+            <option value="70"></option>
+            <option value="80"></option>
+            <option value="90"></option>
+            <option value="100" label="10"></option>
+          </datalist>
+        </div>
+        <div class="item">
+          <label for="city">What percent of products would you estimate are completely out of stock? (0-100%)
+           </label>
+          <input type="range" list="tickmarks">
+
+          <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+            <option value="40"></option>
+            <option value="50" label="5"></option>
+            <option value="60"></option>
+            <option value="70"></option>
+            <option value="80"></option>
+            <option value="90"></option>
+            <option value="100" label="10"></option>
+          </datalist>
+        </div>
+        <div class="item">
+          <label for="permit">Are the product labels on the correct item?
+          </label>
+          <select id="permit">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+
+        <div class="btn-block">
+          <button type="submit" href="/">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
